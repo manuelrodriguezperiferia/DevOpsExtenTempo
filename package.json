@@ -1,0 +1,91 @@
+{
+  "name": "devopsexten",
+  "displayName": "DevOpsExten",
+  "description": "extension base",
+  "publisher": "Chatdevops",
+  "icon": "img/Chat_128.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "enabledApiProposals": [
+		"chatParticipant",
+		"languageModels"
+	],
+  "activationEvents": [
+    "chatVariableResolver"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "devopsexte.cat",
+        "name": "Cat",
+        "description": "Meow! What can I teach you?",
+        "isSticky": true,
+        "commands": [
+              {
+                  "name": "teach",
+                  "description": "Pick at random a computer science concept then explain it in purfect way of a cat"
+              },
+              {
+                  "name": "play",
+                  "description": "Do whatever you want, you are a cat after all"
+              }
+         ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "devopsexten.helloWorld",
+        "title": "Hello2"
+      },
+      {
+        "command": "devopsexten.Perro",
+        "title": "Perro"
+      }
+      ,
+      {
+        "command": "devopsexten.cat",
+        "title": "cat"
+      }
+      ,
+      {
+        "command": "devopsexten.namesInEditor",
+        "title": "Gato"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "--enable-proposed-api":"Chatdevops.devopsexten",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.89.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manuelrodriguezperiferia/ExtensionType.git"
+  },
+  "license": "License.txt",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
